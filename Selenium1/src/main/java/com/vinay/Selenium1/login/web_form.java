@@ -97,5 +97,15 @@ public class web_form {
 				driver.findElement(By.id("my-check-2")).click();
 			}
 		}
+		
+		if(radioButtonProperty != null) {
+			if(radioButtonProperty == "Default radio") {
+				driver.findElement(By.id("my-radio-2")).click();
+			}
+//			else {
+//				driver.findElement(By.id("my-radio-1")).click();
+//			}
+		}
+	
 	}
 }
