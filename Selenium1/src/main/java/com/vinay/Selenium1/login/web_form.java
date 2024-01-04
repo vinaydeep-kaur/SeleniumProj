@@ -102,9 +102,9 @@ public class web_form {
 			if(radioButtonProperty == "Default radio") {
 				driver.findElement(By.id("my-radio-2")).click();
 			}
-//			else {
-//				driver.findElement(By.id("my-radio-1")).click();
-//			}
+			else {
+				driver.findElement(By.id("my-radio-1")).click();
+			}
 		}
 	
 	}
