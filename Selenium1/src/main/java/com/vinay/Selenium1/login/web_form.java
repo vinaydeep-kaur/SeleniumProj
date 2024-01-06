@@ -82,5 +82,10 @@ public class web_form {
 		}
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+		
+		if (fileInputProperty != null) {
+			driver.findElement(By.name("my-file")).sendKeys(fileInputProperty);
+
+		}
 	}
 }
