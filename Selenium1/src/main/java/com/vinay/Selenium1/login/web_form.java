@@ -68,7 +68,6 @@ public class web_form {
 		Select selectList = new Select(selectElement);
 		List<WebElement> options = selectList.getOptions();
 
-		
 		for (WebElement e : options) {
 			if (e.getText().equals(dropdownSelectProperty)) {
 				e.click();
@@ -76,16 +75,21 @@ public class web_form {
 			}
 		}
 
-		if(dropdownDataListProperty != null) {
+		if (dropdownDataListProperty != null) {
 			WebElement dataList = driver.findElement(By.name("my-datalist"));
 			dataList.sendKeys(dropdownDataListProperty);
 		}
-		
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-		
+
 		if (fileInputProperty != null) {
 			driver.findElement(By.name("my-file")).sendKeys(fileInputProperty);
+		}
 
+		if (checkedCheckBoxProperty == false) {
+			if (driver.findElement(By.name("my-check")).isSelected()) {
+				driver.findElement(By.name("my-check")).click();
+			}
 		}
 	}
 }
