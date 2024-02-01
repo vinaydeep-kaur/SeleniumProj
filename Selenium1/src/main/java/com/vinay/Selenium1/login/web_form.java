@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class web_form {
 	public static void fillWebForm(WebDriver driver) {
@@ -62,15 +63,19 @@ public class web_form {
 		WebElement readOnlyInputProperty = driver.findElement(By.name("my-readonly"));
 		System.out.println(readOnlyInputProperty.getText());
 		System.out.println(readOnlyInputProperty.getAttribute("value"));
-		
-		driver.findElement(By.name("my-select")).click();
-		List<WebElement> options = driver.findElements(By.name("my-select"));
-		
-		for(WebElement e : options) {
+
+		WebElement selectElement = driver.findElement(By.name("my-select"));
+		Select selectList = new Select(selectElement);
+		List<WebElement> options = selectList.getOptions();
+
+		for (WebElement e : options) {
 			if (e.getText().equals(dropdownSelectProperty)) {
 				e.click();
+				System.out.println("clicked on two");
 			}
 		}
-		
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50000));
+
 	}
 }
