@@ -22,7 +22,7 @@ public class web_form {
 		String textAreaProperty = "This is string text area. there can be more than 200 words here";
 
 		Boolean disabledInputProperty = false;
-		//String readonlyInputProperty = "";
+		// String readonlyInputProperty = "";
 		String dropdownSelectProperty = "Two";
 		String dropdownDataListProperty = "Seattle";
 
@@ -47,14 +47,14 @@ public class web_form {
 			WebElement password = driver.findElement(By.name("my-password"));
 			password.sendKeys(passwordProperty);
 		}
-		if( textAreaProperty !=null) {
+		if (textAreaProperty != null) {
 			WebElement textArea = driver.findElement(By.name("my-textarea"));
 			textArea.sendKeys(textAreaProperty);
 		}
-		
-		if(disabledInputProperty !=null) {
+
+		if (disabledInputProperty != null) {
 			WebElement disableInput = driver.findElement(By.name("my-disabled"));
-			if(!disableInput.isEnabled()) {
+			if (!disableInput.isEnabled()) {
 				System.out.println("The disabled element is disabled");
 			}
 		}
