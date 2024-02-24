@@ -22,7 +22,7 @@ public class web_form {
 		String textAreaProperty = "This is string text area. there can be more than 200 words here";
 
 		Boolean disabledInputProperty = false;
-		Boolean readonlyInputProperty = null;
+		//String readonlyInputProperty = "";
 		String dropdownSelectProperty = "Two";
 		String dropdownDataListProperty = "Seattle";
 
@@ -58,5 +58,8 @@ public class web_form {
 				System.out.println("The disabled element is disabled");
 			}
 		}
+		WebElement readOnlyInputProperty = driver.findElement(By.name("my-readonly"));
+		System.out.println(readOnlyInputProperty.getText());
+		System.out.println(readOnlyInputProperty.getAttribute("value"));
 	}
 }
