@@ -51,5 +51,12 @@ public class web_form {
 			WebElement textArea = driver.findElement(By.name("my-textarea"));
 			textArea.sendKeys(textAreaProperty);
 		}
+		
+		if(disabledInputProperty !=null) {
+			WebElement disableInput = driver.findElement(By.name("my-disabled"));
+			if(!disableInput.isEnabled()) {
+				System.out.println("The disabled element is disabled");
+			}
+		}
 	}
 }
