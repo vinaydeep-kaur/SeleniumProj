@@ -47,5 +47,9 @@ public class web_form {
 			WebElement password = driver.findElement(By.name("my-password"));
 			password.sendKeys(passwordProperty);
 		}
+		if( textAreaProperty !=null) {
+			WebElement textArea = driver.findElement(By.name("my-textarea"));
+			textArea.sendKeys(textAreaProperty);
+		}
 	}
 }
