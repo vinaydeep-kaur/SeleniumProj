@@ -2,7 +2,9 @@ package com.vinay.Selenium1.login;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class web_form {
 	public static void fillWebForm(WebDriver driver) {
@@ -15,27 +17,35 @@ public class web_form {
 		System.out.println(title);
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-		String text = "text";
-		String password = "password";
-		String textarea = "This is string text area. there can be more than 200 words here";
+		String textProperty = "text";
+		String passwordProperty = "password";
+		String textAreaProperty = "This is string text area. there can be more than 200 words here";
 
-		Boolean disabledInput = false;
-		Boolean readonlyInput = null;
-		String dropdownSelect = "Two";
-		String dropdownDataList = "Seattle";
+		Boolean disabledInputProperty = false;
+		Boolean readonlyInputProperty = null;
+		String dropdownSelectProperty = "Two";
+		String dropdownDataListProperty = "Seattle";
 
-		String fileInput = "D:\\myfiles\\Lakehead Studies\\my\\Resume\\Data scientist\\Vinaydeep_Kaur_ML Engineer.pdf";
-		Boolean checkedCheckBox = false;
-		Boolean defaultCheckedBox = true;
+		String fileInputProperty = "D:\\myfiles\\Lakehead Studies\\my\\Resume\\Data scientist\\Vinaydeep_Kaur_ML Engineer.pdf";
+		Boolean checkedCheckBoxProperty = false;
+		Boolean defaultCheckedBoxProperty = true;
 
-		String radioButton = "Default radio";
+		String radioButtonProperty = "Default radio";
 
-		int colourPickR = 45;
-		int colourPickG = 34;
-		int colourPickB = 46;
+		int colourPickRProperty = 45;
+		int colourPickGProperty = 34;
+		int colourPickBProperty = 46;
 
-		String date = "13/04/2017";
-		int range = 7;
+		String dateProperty = "13/04/2017";
+		int rangeProperty = 7;
 
+		if (textProperty != null) {
+			WebElement text = driver.findElement(By.id("my-text-id"));
+			text.sendKeys(textProperty);
+		}
+		if (passwordProperty != null) {
+			WebElement password = driver.findElement(By.name("my-password"));
+			password.sendKeys(passwordProperty);
+		}
 	}
 }

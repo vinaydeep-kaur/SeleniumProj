@@ -32,6 +32,5 @@ public class Launcher {
 		default:
 			System.out.println("invalid page");
 		}
-
 	}
 }
