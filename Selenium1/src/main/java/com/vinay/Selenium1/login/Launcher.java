@@ -15,39 +15,23 @@ public class Launcher {
 		String title = driver.getTitle();
 		System.out.println(title);
 
-//		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-//		String pageSource = driver.getPageSource();
-////		System.out.println(pageSource);
-//		driver.findElement(By.linkText("web-form.html")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
 
-//		String page = "web-form.html";
-//
-//		switch (page) {
-//		case "web-form.html":
-//			System.out.println("In switch");
-//			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-//			driver.findElement(By.linkText("web-form.html")).click();
-//			
-//			web_form.fillWebForm(driver);
-//			driver.close();
-//			break;
-//
-//		default:
-//			System.out.println("invalid page");
-//		}
+		String page = "web-form.html";
 
-//		title = driver.getTitle();
-//		System.out.println(title);
-//
-//		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
-//		String text = "text";
-//		String password = "password";
-//		String textarea = "This is string text area. there can be more than 200 words here";
-//		
-//		Boolean disabledInput = false;
-//		Boolean readonlyInput = null;
-//		
+		switch (page) {
+		case "web-form.html":
+			System.out.println("In switch");
+			driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+			driver.findElement(By.linkText("web-form.html")).click();
 
-		
+			web_form.fillWebForm(driver);
+			driver.close();
+			break;
+
+		default:
+			System.out.println("invalid page");
+		}
+
 	}
 }
