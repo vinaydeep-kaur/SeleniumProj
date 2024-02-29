@@ -1,5 +1,7 @@
 package com.vinay.Selenium1.login;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -11,6 +13,9 @@ public class Launcher {
 
 		String title = driver.getTitle();
 		System.out.println(title);
-
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+		
+		driver.close();
 	}
 }
