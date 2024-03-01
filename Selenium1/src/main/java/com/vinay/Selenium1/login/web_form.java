@@ -1,6 +1,7 @@
 package com.vinay.Selenium1.login;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,5 +62,15 @@ public class web_form {
 		WebElement readOnlyInputProperty = driver.findElement(By.name("my-readonly"));
 		System.out.println(readOnlyInputProperty.getText());
 		System.out.println(readOnlyInputProperty.getAttribute("value"));
+		
+		driver.findElement(By.name("my-select")).click();
+		List<WebElement> options = driver.findElements(By.name("my-select"));
+		
+		for(WebElement e : options) {
+			if (e.getText().equals(dropdownSelectProperty)) {
+				e.click();
+			}
+		}
+		
 	}
 }
