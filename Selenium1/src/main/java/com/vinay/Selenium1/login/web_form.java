@@ -76,7 +76,11 @@ public class web_form {
 			}
 		}
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(50000));
-
+		if(dropdownDataListProperty != null) {
+			WebElement dataList = driver.findElement(By.name("my-datalist"));
+			dataList.sendKeys(dropdownDataListProperty);
+		}
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
 	}
 }
