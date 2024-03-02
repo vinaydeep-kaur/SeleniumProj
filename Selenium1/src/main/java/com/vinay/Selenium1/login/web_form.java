@@ -87,8 +87,14 @@ public class web_form {
 		}
 
 		if (checkedCheckBoxProperty == false) {
-			if (driver.findElement(By.name("my-check")).isSelected()) {
-				driver.findElement(By.name("my-check")).click();
+			if (driver.findElement(By.id("my-check-1")).isSelected()) {
+				driver.findElement(By.id("my-check-1")).click();
+			}
+		}
+		
+		if (defaultCheckedBoxProperty == true) {
+			if (!driver.findElement(By.id("my-check-2")).isSelected()) {
+				driver.findElement(By.id("my-check-2")).click();
 			}
 		}
 	}
