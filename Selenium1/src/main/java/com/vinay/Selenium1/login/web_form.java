@@ -115,5 +115,9 @@ public class web_form {
 		
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath("//button")).click();
+		
+		driver.switchTo().defaultContent();
+		System.out.println(driver.getTitle());
+		
 	}
 }
