@@ -28,7 +28,7 @@ public class web_form {
 		String dropdownSelectProperty = "Two";
 		String dropdownDataListProperty = "Seattle";
 
-		String fileInputProperty = "D:\\myfiles\\Lakehead Studies\\my\\Resume\\Data scientist\\Vinaydeep_Kaur_ML Engineer.pdf";
+		String fileInputProperty = "D:\\myfiles\\Lakehead Studies\\my\\Resume\\Data scientist\\Vinaydeep_Kaur_Data Scientist.pdf";
 		Boolean checkedCheckBoxProperty = false;
 		Boolean defaultCheckedBoxProperty = true;
 
@@ -38,7 +38,7 @@ public class web_form {
 		int colourPickGProperty = 34;
 		int colourPickBProperty = 46;
 
-		String dateProperty = "13/04/2017";
+		String dateProperty = "05/13/2017";
 		int rangeProperty = 7;
 
 		if (textProperty != null) {
@@ -106,6 +106,14 @@ public class web_form {
 				driver.findElement(By.id("my-radio-1")).click();
 			}
 		}
+		
+		if(dateProperty !=null) {
+			driver.findElement(By.name("my-date")).sendKeys(dateProperty);
+		}
 	
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+		
+		driver.switchTo().defaultContent();
+		driver.findElement(By.xpath("//button")).click();
 	}
 }
